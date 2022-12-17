@@ -1,0 +1,123 @@
+/* @media screen and (min-width: 767.98px) {
+  .patient_profile_right table {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    table-layout: fixed;
+    margin: 40px auto 0px auto;
+  }
+} */
+
+@media screen and (max-width: 3078.98px) {
+  /* ======== FOR TABLE =========== */
+
+  .profile_right .table_wrapper {
+    overflow-x: scroll;
+  }
+
+  .profile_right .table_wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .profile_right table {
+    width: 100%;
+    margin: 20px auto 20px auto;
+
+    border-collapse: collapse;
+
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-radius: 5px;
+  }
+
+  .profile th {
+    padding: 10px 0px;
+    font-size: 15px;
+    color: var(--black-);
+  }
+
+  .profile th:first-child {
+    padding-left: 20px;
+  }
+
+  .profile .table_data {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+  }
+
+  .profile th {
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .profile td {
+    border-collapse: collapse;
+    padding: 20px 0px;
+  }
+
+  .profile .table-width-230 {
+    min-width: 230px;
+    padding-left: 20px;
+  }
+
+  .profile td:first-child p {
+    font-size: 12px;
+  }
+
+  .profile td:last-child p {
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+
+    /* margin-left: -20px; */
+    width: 90%;
+    border-radius: 4px;
+  }
+  .profile td h2 {
+    font-size: 14px;
+
+    color: var(--black-);
+  }
+
+  .profile td p {
+    font-size: 13px;
+
+    color: var(--black-);
+  }
+
+  .profile .table-width-190 {
+    min-width: 190px;
+  }
+
+  .profile .table-width-180 {
+    min-width: 180px;
+  }
+  .profile .table-width-170 {
+    min-width: 170px;
+  }
+  .profile .table-width-160 {
+    min-width: 160px;
+  }
+  .profile .table-width-150 {
+    min-width: 150px;
+  }
+
+  .profile .table-width-140 {
+    min-width: 140px;
+  }
+
+  .profile .table-width-100 {
+    min-width: 100px;
+  }
+
+  .profile table .cancelled {
+    color: #e63c3c !important;
+    background-color: #f2113618 !important;
+  }
+
+  .profile table .pending {
+    background-color: #ff990014 !important;
+    color: #f39c12 !important;
+  }
+
+  .profile table .confirmed {
+    background-color: #0fb76b1f !important;
+    color: #26af48 !important;
+  }
+}

@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: poppin_light;
+  src: url("../fonts//Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppin_reg;
+  src: url("../fonts//Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: poppin_bold;
+  src: url("../fonts//Poppins-Bold.ttf");
+}
+
+:root {
+  --white-: #f9f7f7;
+  --gray-: rgba(255, 255, 255, 0.711);
+  --blue-: #5e9eed;
+  --black-: #112d4e;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.font_light {
+  font-family: poppin_light;
+}
+
+.font_reg {
+  font-family: poppin_reg;
+}
+
+.font_bold {
+  font-family: poppin_bold;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.z-index {
+  z-index: -5;
+}

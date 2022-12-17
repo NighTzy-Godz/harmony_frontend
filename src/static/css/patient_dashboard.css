@@ -1,0 +1,105 @@
+@media screen and (min-width: 1200px) {
+  .profile {
+    padding-top: 100px;
+  }
+
+  .profile .profile_container {
+    display: flex;
+  }
+
+  .profile_left {
+    flex: 0.3;
+    width: 100%;
+    margin-right: 30px;
+  }
+
+  .profile_right {
+    flex: 0.8;
+  }
+
+  .profile_right .dashboard {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-radius: 5px;
+  }
+
+  .profile_right .dashboard .titles {
+    display: flex;
+    /* background-color: rebeccapurple; */
+    padding: 15px 15px 0px 15px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .profile_right .dashboard .category {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border-bottom: 3px solid white;
+  }
+
+  .profile_right .dashboard .category:hover {
+    color: var(--blue-);
+    border-bottom: 3px solid rgb(213, 206, 206);
+  }
+
+  .profile_right .dashboard .category.active {
+    color: var(--blue-);
+    border-bottom: 3px solid var(--blue-);
+  }
+
+  .profile_right .dashboard .no-data {
+    margin: 15px 0px;
+    text-align: center;
+  }
+
+  .profile_right .dashboard .no-data h1 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .profile {
+    padding-top: 50px;
+  }
+
+  .profile .profile_left {
+    padding-top: 30px;
+  }
+
+  .profile_right .dashboard {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .profile_right .dashboard .titles {
+    flex-direction: column;
+
+    border: 1px solid rgba(0, 0, 0, 0.225);
+
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .profile_right .dashboard .titles .category {
+    text-align: center;
+    width: 100%;
+    padding: 3px;
+  }
+
+  .profile_right .dashboard .titles .category.active:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .profile_right .dashboard .titles .category.active {
+    background-color: var(--black-);
+    color: var(--blue-);
+  }
+
+  .profile_right .dashboard .titles .category p {
+    font-size: 14px;
+  }
+}

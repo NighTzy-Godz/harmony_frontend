@@ -1,0 +1,29 @@
+.paginate {
+  margin-top: 20px;
+
+  order: 2;
+}
+
+.paginate ul {
+  display: flex;
+  align-items: center;
+}
+
+.paginate ul li {
+  padding: 2px 10px;
+  border: 1px solid var(--black-);
+  background-color: white;
+  margin-right: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: var(--black-);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.paginate ul li.active {
+  background-color: var(--black-);
+
+  color: var(--white-);
+}

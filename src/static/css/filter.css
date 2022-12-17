@@ -1,0 +1,70 @@
+@media screen and (min-width: 1200px) {
+  .filter {
+    padding: 0px 20px 20px 20px;
+  }
+
+  .filter h1 {
+    margin: 20px 0px;
+    text-align: center;
+    color: var(--black-);
+    font-size: 30px;
+  }
+
+  .filter ul {
+    width: 100%;
+  }
+
+  .filter ul li {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-bottom: none;
+    cursor: pointer;
+  }
+
+  .filter ul li.active {
+    background-color: var(--black-);
+    color: white;
+  }
+
+  .filter ul li:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.225);
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .filter {
+    padding: 10px 20px 20px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    margin-bottom: 20px;
+  }
+
+  .filter h1 {
+    text-align: center;
+    color: var(--black-);
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .filter ul {
+    width: 100%;
+  }
+
+  .filter ul li {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-bottom: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .filter ul li.active {
+    background-color: var(--black-);
+    color: white;
+  }
+
+  .filter ul li:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.225);
+  }
+}

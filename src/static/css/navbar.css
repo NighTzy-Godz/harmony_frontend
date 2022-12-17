@@ -1,0 +1,178 @@
+@media screen and (min-width: 700px) {
+  .mainNav {
+    background-color: var(--black-);
+    padding: 10px;
+  }
+
+  .mainNav .logo a {
+    font-size: 30px;
+    color: var(--blue-);
+  }
+
+  .mainNav .navContainer {
+    display: flex;
+
+    align-items: center;
+  }
+
+  .mainNav .navLinks {
+    display: flex;
+    align-items: center;
+    margin: 0 auto !important;
+  }
+
+  .mainNav .navLinks a {
+    margin-right: 30px;
+    color: var(--white-);
+    font-size: 17px;
+    transition: all 0.1s ease-in;
+    /* padding: 3px; */
+  }
+
+  .mainNav .navLinks a:hover {
+    color: var(--gray-);
+  }
+
+  .mainNav .navLinks a.active {
+    color: var(--blue-);
+  }
+
+  .mainNav .hidden_content {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .mainNav .auth {
+    display: flex;
+    align-items: center;
+  }
+
+  .mainNav .auth a {
+    cursor: pointer;
+    font-size: 17px;
+    width: 100%;
+    color: var(--white-);
+  }
+
+  .mainNav .auth a.active {
+    color: var(--blue-);
+  }
+
+  .mainNav #toggler {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .mainNav .container {
+    width: 0;
+    margin: 0;
+  }
+
+  .mainNav .btn {
+    background-color: var(--blue-);
+    padding: 4px;
+    border-radius: 5px;
+    display: block;
+    width: 83px;
+    text-align: center;
+    color: var(--white-);
+
+    font-size: 14px;
+  }
+  .mainNav {
+    background-color: var(--black-);
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+  }
+
+  .mainNav .logo a {
+    position: absolute;
+    font-size: 25px;
+    color: var(--blue-);
+    top: 7px;
+    margin-left: 5%;
+    /* z-index: 2; */
+  }
+
+  .mainNav .hidden_content {
+    transform: translateX(100%);
+    /* margin-left: -30px; */
+
+    transition: all 0.3s ease-in-out;
+
+    background-color: var(--white-);
+    top: 50px;
+    min-width: 60%;
+    right: 0;
+    height: 100%;
+    position: fixed;
+  }
+
+  .mainNav .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: center; */
+    width: 100%;
+  }
+
+  .mainNav .navLinks li {
+    width: 100%;
+
+    border-bottom: 1px solid var(--black-);
+  }
+
+  .mainNav .navLinks a {
+    color: var(--black-);
+    font-size: 14px;
+    display: block;
+    padding: 8px 20px;
+  }
+
+  .mainNav a.active {
+    background-color: var(--black-);
+    color: var(--white-);
+  }
+
+  .mainNav .hidden_content.show {
+    display: block;
+    transform: translateX(0);
+  }
+
+  .mainNav .auth {
+    width: 100%;
+    border-bottom: 1px solid var(--black-);
+  }
+
+  .mainNav .auth a {
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 20px;
+    width: 100%;
+    color: var(--black-);
+  }
+
+  .mainNav .auth a.active {
+    background-color: var(--black-);
+    color: var(--white-);
+  }
+
+  #toggler {
+    cursor: pointer;
+    width: 15px;
+    position: absolute;
+    top: 1.1rem;
+    right: 5%;
+    z-index: 1;
+  }
+
+  #toggler hr {
+    color: white;
+    margin-top: 3px;
+  }
+}

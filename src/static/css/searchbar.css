@@ -1,0 +1,30 @@
+@media screen and (min-width: 1200px) {
+  .searchbar {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .searchbar input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .searchbar {
+    width: 100%;
+    order: 1;
+  }
+
+  .searchbar input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+  }
+}
