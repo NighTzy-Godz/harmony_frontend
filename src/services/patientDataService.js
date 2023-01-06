@@ -20,13 +20,54 @@ export function getPatientProfile() {
 }
 
 export function saveAppointment(data) {
-  console.log(data);
   return http
     .post(`${BASE_URL}/appointment`, data)
     .then(() => {
       toast.success("The appointment was successfully requested.", {
         autoClose: 2500,
       });
+    })
+    .catch((err) => {
+      toast.error(err.response.data, { autoClose: 2500 });
+      return err;
+    });
+}
+
+export function updateAccount(data) {
+  const formData = new FormData();
+  formData.append("first_name", data.first_name);
+  formData.append("last_name", data.last_name);
+  formData.append("contact", data.contact);
+  formData.append("email", data.email);
+
+  if (data.img !== undefined) {
+    formData.append("img", data.img);
+  }
+  return http
+    .post(`${BASE_URL}/updateAccount`, formData)
+    .then((user) => {
+      toast.success(
+        `Account successfully updated for ${user.data.first_name} ${user.data.last_name}`,
+        { autoClose: 2000 }
+      );
+      // navigate("/patient/me/dashboard");
+
+      return user;
+    })
+    .catch((err) => {
+      toast.error(err.response.data, { autoClose: 2500 });
+      return err;
+    });
+}
+
+export function changePassword(data) {
+  return http
+    .post(`${BASE_URL}/change-password`, data)
+    .then((user) => {
+      toast.success(`Password has been changed.`, { autoClose: 2000 });
+      // navigate("/patient/me/dashboard");
+
+      return user;
     })
     .catch((err) => {
       toast.error(err.response.data, { autoClose: 2500 });
@@ -44,4 +85,8 @@ export function getAcceptedAppointments() {
 
 export function getSearchedDoctor(data) {
   return http.get(`${BASE_URL}/search_doctor/${data}`);
+}
+
+export function getAppointmentDocDisplay(data) {
+  return http.get(`${BASE_URL}/search_doc_display/${data}`);
 }

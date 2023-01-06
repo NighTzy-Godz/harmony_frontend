@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useState } from "react";
 import { getAllDoctors } from "../../../../services/doctorDataServices";
 import { getSearchedDoctor } from "../../../../services/patientDataService";
-import { doctorSpecialties, selectedDoctor } from "../../../../utils/helper";
+import { doctorSpecialties } from "../../../../utils/helper";
 import { paginate } from "../../../../utils/paginate";
 import DoctorProfileCard from "../../../common/DoctorProfileCard";
 import Filter from "../../../common/Filter";
@@ -10,15 +10,23 @@ import { FormContext } from "../../../common/Form";
 import Paginate from "../../../common/Paginate";
 import SearchBar from "../../../common/SearchBar";
 import NoData from "../../../common/NoData";
+import AppointmentDocDisplay from "../../../common/AppointmentDocDisplay";
 
 const ChooseDoctor = (props) => {
   let count = 0;
-  const { step, onStepChange } = props;
+  const {
+    step,
+    currDocId,
+    onStepChange,
+    onDocIdChange,
+    removeDocDisplay,
+    onRemoveDocDisplay,
+  } = props;
 
   const formContext = useContext(FormContext);
   const { data } = formContext;
   const [specialtiesList, setSpecialtiesList] = useState([]);
-  const [doctorId, setDoctorId] = useState("");
+
   const [currSpecialty, setCurrSpecialty] = useState("");
   const [doctors, setDoctors] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,30 +61,33 @@ const ChooseDoctor = (props) => {
       setDoctors(doctors);
     };
 
-    getDoctors();
-
-    const checkSelectedDoctor = () => {
-      count++;
-      if (selectedDoctor.length !== 0) {
-        for (let items of selectedDoctor) {
-          data.doctorId = items.id;
-
-          if (count === 2) selectedDoctor.shift();
-          onStepChange(step + 1);
-        }
-      }
+    const setDoctor = () => {
+      data.doctorId = currDocId;
     };
 
-    checkSelectedDoctor();
-  }, [data, count, step, onStepChange, searchTerm]);
+    getDoctors();
+    setDoctor();
+    console.log(data);
+  }, [
+    data,
+    count,
+    step,
+    onStepChange,
+    searchTerm,
+    currDocId,
+    onRemoveDocDisplay,
+    removeDocDisplay,
+  ]);
 
   const handleDoctorSelect = (id) => {
-    setDoctorId(id);
+    // setDoctorId(id);
+    onDocIdChange(id);
   };
 
   const handleSpecialtyChange = (specialty) => {
     setCurrSpecialty(specialty);
-    setDoctorId("");
+
+    onDocIdChange("");
   };
 
   const handleSearch = (search) => {
@@ -85,6 +96,10 @@ const ChooseDoctor = (props) => {
 
   const handlePageChange = (page) => {
     setPaginateValues({ ...paginateValues, currPage: page });
+  };
+
+  const handleRemoveDoc = () => {
+    onDocIdChange("");
   };
 
   let filteredDoctor = doctors;
@@ -108,14 +123,25 @@ const ChooseDoctor = (props) => {
         <React.Fragment key={doc._id}>
           <DoctorProfileCard
             data={doc}
-            onDoctorSelect={handleDoctorSelect}
             buttonText="Select Me"
             buttonEvent={handleDoctorSelect}
-            currDocId={doctorId}
+            currDocId={data.doctorId}
           />
         </React.Fragment>
       );
     });
+  };
+
+  const renderDocInfo = () => {
+    if (!data.doctorId) return;
+
+    return (
+      <AppointmentDocDisplay
+        displayBtn={true}
+        docId={data.doctorId}
+        onRemoveDoc={handleRemoveDoc}
+      />
+    );
   };
 
   return (
@@ -130,12 +156,14 @@ const ChooseDoctor = (props) => {
             />
           </div>
           <div className="all_doctors_right">
+            {renderDocInfo()}
             <SearchBar onSearchChange={handleSearch} value={searchTerm} />
             <div className="doctors_grid">{renderDoctors()}</div>
             <div className="nxtBtn">
               <button
+                style={{ cursor: "pointer" }}
                 onClick={() => onStepChange(step + 1)}
-                disabled={!doctorId}
+                disabled={!data.doctorId}
                 className="font_reg "
               >
                 Next

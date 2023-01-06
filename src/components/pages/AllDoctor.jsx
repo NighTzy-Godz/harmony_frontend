@@ -8,7 +8,7 @@ import Paginate from "../common/Paginate";
 import { paginate } from "../../utils/paginate";
 import Filter from "../common/Filter";
 import LoadingData from "../common/LoadingData";
-import { doctorSpecialties, selectedDoctor } from "../../utils/helper";
+import { doctorSpecialties } from "../../utils/helper";
 import { getSearchedDoctor } from "../../services/patientDataService";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -66,16 +66,12 @@ const AllDoctors = ({ user }) => {
   }
 
   const onButtonClick = (id) => {
-    const docDetail = { id };
     if (!user) {
-      toast.info("Login first to book the Doctor.");
-      navigate("/patient/login");
-      return;
+      toast.info(
+        "Login first to book the Doctor, then proceed to 'Create Appointment'"
+      );
+      return navigate("/patient/login");
     }
-
-    selectedDoctor.push(docDetail);
-
-    return navigate("/patient/appointment");
   };
 
   const paginatedDoctors = paginate(filteredDoctor, pageSize, currPage);
@@ -98,9 +94,10 @@ const AllDoctors = ({ user }) => {
     });
   };
 
-  if (user) {
+  if (user && Object.keys(user).length !== 0) {
     toast.error("You cannot do that action", { toastId: "All doctors" });
     navigate(`/${user.isPatient ? "patient" : "doctor"}/me/dashboard`);
+    return;
   }
 
   return (

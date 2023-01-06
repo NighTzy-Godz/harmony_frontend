@@ -14,7 +14,6 @@ const PatientAppointments = ({ user }) => {
       className: "table-width-230",
       xtraContent: (item) => (
         <React.Fragment>
-          {console.log(item)}
           <h2 className="font_reg">{item.doctor.name}</h2>
           <p className=" font_light">{item.doctor.specialty}</p>
         </React.Fragment>

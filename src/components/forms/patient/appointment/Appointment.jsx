@@ -15,14 +15,30 @@ const Appointment = () => {
     doctorId: "",
   });
   const [step, setStep] = useState(1);
+  const [docId, setDocId] = useState("");
 
   const handleStep = (step) => {
     setStep(step);
   };
 
+  const handleDocId = (id) => {
+    setDocId(id);
+  };
+
+  const handleRemoveDocId = () => {
+    setDocId("");
+  };
+
   const renderForm = () => {
     if (step === 1) {
-      return <ChooseDoctor step={step} onStepChange={handleStep} />;
+      return (
+        <ChooseDoctor
+          step={step}
+          onStepChange={handleStep}
+          onDocIdChange={handleDocId}
+          currDocId={docId}
+        />
+      );
     }
 
     if (step === 2)
@@ -31,6 +47,8 @@ const Appointment = () => {
           step={step}
           onStepChange={handleStep}
           submitEvent={setData}
+          onRemoveDocId={handleRemoveDocId}
+          currDocId={docId}
         />
       );
   };

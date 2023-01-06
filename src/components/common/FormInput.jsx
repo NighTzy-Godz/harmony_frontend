@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FormContext } from "./Form";
 
 const FormInput = (props) => {
-  const { label, name, type = "text" } = props;
+  const { label, name, type = "text", placeholder = "" } = props;
 
   const formContext = useContext(FormContext);
   const { data, handleChange } = formContext;
@@ -13,6 +13,8 @@ const FormInput = (props) => {
         {label}
       </label>
       <input
+        // autoComplete="true"
+        placeholder={placeholder}
         type={type}
         name={name}
         value={data[name]}

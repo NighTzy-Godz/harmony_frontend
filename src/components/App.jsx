@@ -11,24 +11,24 @@ import NotFound from "./common/NotFound";
 import HomeLayout from "./pages/HomeLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Logout from "./pages/Logout";
 
 import PatientRegister from "./forms/patient/PatientRegister";
 import PatientLogin from "./forms/patient/PatientLogin";
 import PatientDashboard from "./pages/patient/PatientDashboard";
 import PatientLayout from "./pages/patient/PatientLayout";
-
-import DoctorRegister from "./forms/doctor/DoctorRegister";
-
-import Logout from "./pages/Logout";
-import PatientAccount from "./pages/patient/PatientAccount";
+import PatientAccountUpdate from "./forms/patient/PatientAccountUpdate";
 import Appointment from "./forms/patient/appointment/Appointment";
 
+import DoctorRegister from "./forms/doctor/DoctorRegister";
 import DoctorLogin from "./forms/doctor/DoctorLogin";
 import DoctorLayout from "./pages/doctor/DoctorLayout";
 import DoctorConfirmation from "./pages/doctor/DoctorConfirmation";
 import DoctorDashboard from "./pages/doctor/DoctorDashboard";
-import PharmacyLayout from "./pages/pharmacy/PharmacyLayout";
 import AllDoctors from "./pages/AllDoctor";
+
+import PharmacyLayout from "./pages/pharmacy/PharmacyLayout";
+import PatientChangePass from "./forms/patient/PatientChangePass";
 
 class App extends Component {
   state = {
@@ -85,7 +85,15 @@ class App extends Component {
                 path="account"
                 element={
                   <ProtectedRoute user={user}>
-                    <PatientAccount />
+                    <PatientAccountUpdate />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="change-password"
+                element={
+                  <ProtectedRoute user={user}>
+                    <PatientChangePass />
                   </ProtectedRoute>
                 }
               />
@@ -113,8 +121,9 @@ class App extends Component {
                     <DoctorDashboard currUser={user} />
                   </ProtectedRoute>
                 }
-              ></Route>
+              />
             </Route>
+
             {/* ==================================================== */}
             {/* ===============PHARMACY ROUTES HERE ================ */}
             {/* ==================================================== */}

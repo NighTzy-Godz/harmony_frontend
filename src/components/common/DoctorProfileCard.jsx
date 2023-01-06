@@ -17,6 +17,7 @@ const DoctorProfileCard = ({
     contact,
   } = data;
 
+  // console.log(currDocId);
   return (
     <div
       className={`doctor_profile_card ${currDocId === _id ? "selected" : ""} `}

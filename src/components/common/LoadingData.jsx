@@ -4,7 +4,6 @@ const LoadingData = ({ msg }) => {
   return (
     <React.Fragment>
       <td>
-        {" "}
         <h2
           className="font_reg"
           style={{
@@ -12,10 +11,10 @@ const LoadingData = ({ msg }) => {
             marginLeft: "17px",
             marginTop: "5px",
           }}
-        >
-          {msg}
-        </h2>
+        ></h2>
       </td>
+
+      {msg}
     </React.Fragment>
   );
 };

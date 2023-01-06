@@ -10,7 +10,7 @@ const TableBody = ({ columns, dataSource }) => {
   useEffect(() => {
     const getData = async () => {
       const { data: result } = await dataSource();
-      console.log(result);
+
       setData(result);
     };
 

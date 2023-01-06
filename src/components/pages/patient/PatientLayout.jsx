@@ -17,6 +17,11 @@ const PatientLayout = () => {
       icon: "fa-solid fa-table-columns",
     },
     {
+      label: "Change Password",
+      path: "/patient/me/change-password",
+      icon: "fa-solid fa-lock",
+    },
+    {
       label: "Account",
       path: "/patient/me/account",
       icon: "fa-solid fa-user",

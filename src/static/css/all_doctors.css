@@ -10,12 +10,13 @@
   .all_doctors .all_doctors_left {
     flex: 0.2;
     border: 1px solid rgba(0, 0, 0, 0.225);
-    height: 505px;
+    height: 520px;
     margin-right: 30px;
   }
 
   .all_doctors .all_doctors_right {
     flex: 0.8;
+    margin-bottom: 20px;
   }
 
   .all_doctors .doctors_grid {

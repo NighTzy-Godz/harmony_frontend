@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
-
+import "../../../../static/css/choose_schedule.css";
 import FormInput from "../../../common/FormInput";
 import { FormContext } from "../../../common/Form";
 import moment from "moment";
 import { setTime } from "../../../../utils/helper";
 
+import AppointmentDocDisplay from "../../../common/AppointmentDocDisplay";
+
 const Appointment = (props) => {
+  const { currDocId, onRemoveDocId } = props;
+
   const formContext = useContext(FormContext);
   const { data } = formContext;
   const { step, submitEvent, onStepChange } = props;
@@ -15,7 +19,7 @@ const Appointment = (props) => {
     for (let i = 12; i <= 23; i++) {
       if (i === parseInt(time[0])) {
         if (i.toString() === "12") return `12:${time[1]} PM`;
-
+        console.log(data);
         return `${i - 12}:${time[1]} PM`;
       }
     }
@@ -39,25 +43,60 @@ const Appointment = (props) => {
     return setData;
   };
 
+  const handleRemoveDoc = () => {
+    data.doctorId = "";
+    onRemoveDocId();
+  };
+
   const doSubmit = (data) => {
     const currData = setData(data);
 
     submitEvent(currData);
   };
 
+  const renderDocInfo = () => {
+    if (!currDocId) return;
+
+    return (
+      <AppointmentDocDisplay
+        displayBtn={false}
+        docId={currDocId}
+        onRemoveDoc={handleRemoveDoc}
+      />
+    );
+  };
+
   return (
     <React.Fragment>
-      <div className="" style={{ paddingTop: "100px" }}></div>
-      <FormInput label="Date of Appointment" name="date" type="date" />
-      <br />
+      <div className="choose_sched">
+        <div className="container">
+          {/* <div className="text">
+            <h3 className="font_reg">Details</h3>
+          </div> */}
+          {renderDocInfo()}
 
-      <FormInput label="Time of Appointment" name="time" type="time" />
-      <br />
-      <button type="submit" onClick={() => doSubmit(data)}>
-        Submit
-      </button>
-      <br />
-      <button onClick={() => onStepChange(step - 1)}>GO Back</button>
+          <div className="choose_sched_input" style={{ marginTop: "40px" }}>
+            <FormInput label="Date of Appointment" name="date" type="date" />
+          </div>
+
+          <div className="choose_sched_input" style={{ marginBottom: "40px" }}>
+            <FormInput label="Time of Appointment" name="time" type="time" />
+          </div>
+
+          <div className="buttons">
+            <button className="font_reg" onClick={() => onStepChange(step - 1)}>
+              Go Back
+            </button>
+            <button
+              className="font_reg"
+              type="submit"
+              onClick={() => doSubmit(data)}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
