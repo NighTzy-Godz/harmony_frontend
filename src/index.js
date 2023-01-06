@@ -11,3 +11,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+// REACT_APP_API_PATIENT_URL=http://localhost:8080/patient
+// REACT_APP_API_DOCTOR_URL=http://localhost:8080/doctor
