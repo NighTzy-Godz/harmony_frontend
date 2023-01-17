@@ -30,6 +30,7 @@ import AllDoctors from "./pages/AllDoctor";
 import PharmacyLayout from "./pages/pharmacy/PharmacyLayout";
 import PatientChangePass from "./forms/patient/PatientChangePass";
 import Contact from "./pages/Contact";
+import LoginLayout from "./pages/LoginLayout";
 
 class App extends Component {
   state = {
@@ -54,9 +55,10 @@ class App extends Component {
           <Route path="/" element={<HomeLayout user={user} />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-
             <Route path="contact" element={<Contact />} />
             <Route path="doctors" element={<AllDoctors user={user} />} />
+            <Route path="login" element={<LoginLayout />} />
+
             {/* ==================================================== */}
             {/* =============== PATIENT ROUTES HERE ================ */}
             {/* ==================================================== */}

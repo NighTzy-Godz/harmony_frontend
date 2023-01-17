@@ -95,7 +95,7 @@ const Navbar = ({ user }) => {
                   <React.Fragment>
                     <li>
                       <NavLink
-                        to="/patient/login"
+                        to="/login"
                         className="font_reg"
                         onClick={() => setToggle(!toggle)}
                       >
