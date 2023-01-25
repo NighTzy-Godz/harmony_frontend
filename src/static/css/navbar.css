@@ -65,6 +65,14 @@
 }
 
 @media screen and (max-width: 575.98px) {
+  .mainNav {
+    background-color: var(--black-);
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    top: 0;
+  }
   .mainNav .container {
     width: 0;
     margin: 0;
@@ -80,13 +88,6 @@
     color: var(--white-);
 
     font-size: 14px;
-  }
-  .mainNav {
-    background-color: var(--black-);
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    z-index: 500;
   }
 
   .mainNav .logo a {

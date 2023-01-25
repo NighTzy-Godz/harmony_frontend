@@ -43,7 +43,7 @@
   .filter h1 {
     text-align: center;
     color: var(--black-);
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
   }
 
@@ -57,7 +57,7 @@
     border: 1px solid rgba(0, 0, 0, 0.225);
     border-bottom: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .filter ul li.active {

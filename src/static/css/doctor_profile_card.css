@@ -136,7 +136,7 @@
   }
 
   .doctor_profile_details .name h3 {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--black-);
     margin-right: 5px;
   }
@@ -154,6 +154,7 @@
   }
 
   .doctor_profile_button p {
-    font-size: 14px;
+    font-size: 13px;
+    padding: 7px;
   }
 }
