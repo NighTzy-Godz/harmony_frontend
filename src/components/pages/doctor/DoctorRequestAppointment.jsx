@@ -34,7 +34,12 @@ const DoctorRequestAppointment = ({ user }) => {
       className: "table-width-140",
     },
     {
-      label: "Paid Amount",
+      label: "Mode",
+      path: "modeOfConsultation",
+      className: "table-width-140",
+    },
+    {
+      label: "Amount to Pay",
       path: "amount",
       className: "table-width-140",
     },

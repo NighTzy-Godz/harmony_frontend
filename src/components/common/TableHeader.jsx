@@ -4,7 +4,7 @@ const TableHeader = ({ columns }) => {
   const renderTableHeader = () => {
     return columns.map((item, index) => {
       return (
-        <th className="font_bold" key={index + 1}>
+        <th className={`font_bold ${item.className}`} key={index + 1}>
           {item.label}
         </th>
       );

@@ -57,6 +57,10 @@
   .profile_right .dashboard .no-data h1 {
     font-size: 16px;
   }
+
+  .profile_right .patient_appointment .patient_appt_doc_details {
+    padding-left: 20px;
+  }
 }
 
 @media screen and (max-width: 575.98px) {
@@ -101,5 +105,9 @@
 
   .profile_right .dashboard .titles .category p {
     font-size: 14px;
+  }
+
+  .profile_right .patient_appointment .patient_appt_doc_details {
+    padding-left: 20px;
   }
 }

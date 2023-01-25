@@ -28,7 +28,7 @@ const DoctorDashboard = ({ currUser }) => {
       const urlLink = currUser.isPatient ? "patient" : "doctor";
       return navigate(`/${urlLink}/me/dashboard`);
     }
-  }, [user, navigate, currUser]);
+  }, []);
   const handleTitleId = (id) => {
     setState({ ...state, titleId: id });
   };

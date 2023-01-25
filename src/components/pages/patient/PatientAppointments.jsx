@@ -11,7 +11,7 @@ const PatientAppointments = ({ user }) => {
     {
       label: "Doctor",
       path: "doctor.name",
-      className: "table-width-230",
+      className: "table-width-230 ",
       xtraContent: (item) => (
         <React.Fragment>
           <h2 className="font_reg">{item.doctor.name}</h2>
@@ -36,7 +36,7 @@ const PatientAppointments = ({ user }) => {
         return <NoData message="No Appointment was made. Please Create One." />;
 
       return (
-        <table>
+        <table className="patient_appointment">
           <TableHeader columns={columns} />
 
           <TableBody columns={columns} dataSource={getAppointments} />

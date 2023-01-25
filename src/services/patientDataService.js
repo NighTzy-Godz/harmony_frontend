@@ -33,7 +33,7 @@ export function saveAppointment(data) {
     });
 }
 
-export function updateAccount(data) {
+export function updatePatientAccount(data) {
   const formData = new FormData();
   formData.append("first_name", data.first_name);
   formData.append("last_name", data.last_name);
@@ -43,6 +43,7 @@ export function updateAccount(data) {
   if (data.img !== undefined) {
     formData.append("img", data.img);
   }
+
   return http
     .post(`${BASE_URL}/updateAccount`, formData)
     .then((user) => {
@@ -60,7 +61,7 @@ export function updateAccount(data) {
     });
 }
 
-export function changePassword(data) {
+export function changePatientPassword(data) {
   return http
     .post(`${BASE_URL}/change-password`, data)
     .then((user) => {
@@ -89,4 +90,8 @@ export function getSearchedDoctor(data) {
 
 export function getAppointmentDocDisplay(data) {
   return http.get(`${BASE_URL}/search_doc_display/${data}`);
+}
+
+export function getPrescriptions() {
+  return http.get(`${BASE_URL}/prescriptions`);
 }

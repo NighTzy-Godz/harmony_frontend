@@ -12,6 +12,7 @@ const PatientMedicalRecord = ({ user }) => {
       className: "table-width-230",
       xtraContent: (item) => (
         <React.Fragment>
+          {" "}
           <h2 className="font_reg">{item.doctor.name}</h2>
           <p className=" font_light">{item.doctor.specialty}</p>
         </React.Fragment>
@@ -57,7 +58,7 @@ const PatientMedicalRecord = ({ user }) => {
         );
       }
       return (
-        <table>
+        <table className="patient_appointment">
           <TableHeader columns={columns} />
           <TableBody columns={columns} dataSource={getAcceptedAppointments} />
         </table>

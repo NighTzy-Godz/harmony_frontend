@@ -1,6 +1,7 @@
 @media screen and (min-width: 1200px) {
   .about {
     padding-top: 100px;
+    min-height: 550px;
   }
 
   .about .content {
@@ -90,6 +91,102 @@
 
   .mission_vision .content p {
     font-size: 16px;
+    color: var(--black-);
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .about {
+    padding-top: 90px;
+    height: 560px;
+  }
+
+  .about .content h1 {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.93);
+    margin-bottom: 20px;
+  }
+  .about .content h1::before {
+    content: "";
+    padding: 2px;
+    height: 15px;
+    background-color: var(--blue-);
+    margin-right: 15px;
+  }
+
+  .about .content p {
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.887);
+    font-size: 12.5px;
+  }
+
+  .about .content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 13px;
+    background-color: var(--blue-);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12.5px;
+    /* cu */
+  }
+
+  /* ================================ */
+  /* ====== MISSION AND VISION ====== */
+  /* ================================ */
+
+  .mission_vision {
+    padding: 40px 0px;
+  }
+
+  .mission_vision .mainTitle {
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .mission_vision .mainTitle h1 {
+    font-size: 30px;
+    color: var(--black-);
+    line-height: 1.2;
+  }
+
+  .mission_vision .mainTitle h1::before {
+    content: "";
+    position: absolute;
+    padding: 1px;
+    width: 30px;
+    top: 0px;
+    left: 0;
+
+    background: var(--black-);
+  }
+
+  .mission_vision .mainTitle h1::after {
+    content: "";
+    position: absolute;
+    padding: 1px;
+    width: 30px;
+    top: 35px;
+    right: 0;
+
+    background: var(--black-);
+  }
+
+  .mission_vision .content {
+    margin-bottom: 30px;
+  }
+
+  .mission_vision .content h1 {
+    font-size: 25px;
+    color: var(--black-);
+    margin-bottom: 3px;
+  }
+
+  .mission_vision .content p {
+    font-size: 12px;
     color: var(--black-);
     margin-bottom: 5px;
   }

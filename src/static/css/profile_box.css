@@ -13,9 +13,14 @@
   }
 
   .profile_box .profile_detail p {
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 1px;
-    color: var(--black-);
+    color: #757575;
+  }
+
+  .profile_box .profile_detail i {
+    width: 20px;
+    font-size: 14px;
   }
 
   .profile_box .profile_img {
@@ -70,5 +75,10 @@
     font-size: 14px;
     margin-top: 1px;
     color: var(--black-);
+  }
+
+  .profile_box .profile_detail i {
+    width: 20px;
+    font-size: 13px;
   }
 }

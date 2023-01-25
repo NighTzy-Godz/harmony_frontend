@@ -15,6 +15,11 @@ const DoctorRegister = () => {
   const navigate = useNavigate();
 
   const user = getUser();
+  const gender = [
+    { id: 0, name: "" },
+    { id: 1, name: "Male" },
+    { id: 2, name: "Female" },
+  ];
 
   const [state] = useState({
     initialValues: {
@@ -32,7 +37,7 @@ const DoctorRegister = () => {
   const submitEvent = async (data) => {
     const err = await saveDoctor(data);
     if (err) return;
-    navigate("/");
+    navigate("/doctor/login");
   };
 
   if (user) {
@@ -65,6 +70,10 @@ const DoctorRegister = () => {
 
                 <div className="input_container d-flex dropdown">
                   <FormInput label="Last Name" name="last_name" type="text" />
+                </div>
+
+                <div className="input_container d-flex">
+                  <DropDown name="gender" label="Gender" values={gender} />
                 </div>
                 <div className="input_container d-flex">
                   <DropDown

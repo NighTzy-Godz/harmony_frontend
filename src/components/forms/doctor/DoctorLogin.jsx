@@ -19,8 +19,8 @@ const DoctorLogin = () => {
 
   const submitEvent = async (data) => {
     try {
-      console.log("Im the submit even of doctor login");
       const result = await loginDoctor(data);
+
       localStorage.setItem("token", result.headers["x-auth-token"]);
       window.location = "/doctor/me/dashboard";
     } catch (ex) {

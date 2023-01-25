@@ -67,7 +67,6 @@ const ChooseDoctor = (props) => {
 
     getDoctors();
     setDoctor();
-    console.log(data);
   }, [
     data,
     count,

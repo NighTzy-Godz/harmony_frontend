@@ -11,11 +11,16 @@ const customId = "patientregister";
 
 const PatientRegister = ({ user }) => {
   const navigate = useNavigate();
-
+  const gender = [
+    { id: 0, name: "" },
+    { id: 0, name: "Male" },
+    { id: 1, name: "Female" },
+  ];
   const [state, setState] = useState({
     first_name: "",
     last_name: "",
     contact: "",
+    gender: "",
     email: "",
     pass1: "",
     pass2: "",
@@ -24,13 +29,15 @@ const PatientRegister = ({ user }) => {
   const submitEvent = async (e) => {
     e.preventDefault();
     const BASE_URL = process.env.REACT_APP_API_PATIENT_URL;
-    const { first_name, last_name, contact, email, pass1, pass2, img } = state;
+    const { first_name, last_name, contact, email, pass1, pass2, gender, img } =
+      state;
 
     const formData = new FormData();
     formData.append("first_name", first_name);
     formData.append("last_name", last_name);
     formData.append("contact", contact);
     formData.append("email", email);
+    formData.append("gender", gender);
 
     formData.append("pass1", pass1);
     formData.append("pass2", pass2);
@@ -50,6 +57,7 @@ const PatientRegister = ({ user }) => {
         navigate("/patient/login");
       })
       .catch((err) => {
+        console.log(err);
         toast.error(err.response.data, { autoClose: 2500 });
         return;
       });
@@ -101,6 +109,24 @@ const PatientRegister = ({ user }) => {
                     }
                   />
                 </div>
+
+                <div className="input_container d-flex">
+                  <label htmlFor="gender" className="font_reg">
+                    Gender
+                  </label>
+                  <select
+                    name={gender}
+                    id={gender}
+                    onChange={(e) =>
+                      setState({ ...state, gender: e.currentTarget.value })
+                    }
+                    className="dropdown_box"
+                  >
+                    {gender.map((item) => {
+                      return <option key={item.id}>{item.name}</option>;
+                    })}
+                  </select>
+                </div>
                 <div className="input_container d-flex">
                   <label htmlFor={"contact"} className="font_reg">
                     Contact
@@ -117,7 +143,7 @@ const PatientRegister = ({ user }) => {
                 </div>
                 <div className="input_container d-flex">
                   <label htmlFor={"email"} className="font_reg">
-                    Last Name
+                    Email
                   </label>
                   <input
                     type="email"

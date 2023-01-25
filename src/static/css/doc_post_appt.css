@@ -1,0 +1,152 @@
+.tableBtn {
+  padding: 5px;
+  border: none;
+  font-size: 13px;
+  width: 70px;
+  border-radius: 4px;
+  background-color: var(--blue-);
+  color: rgba(255, 255, 255, 0.875);
+}
+
+.doc_post_appt {
+  position: fixed;
+  transform: translateY(-120%);
+  right: 0;
+  top: 0;
+
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  transition: all 0.6s ease;
+}
+
+.doc_post_appt .modal {
+  padding: 20px;
+
+  position: absolute;
+  top: 18%;
+  left: 30%;
+  width: 40%;
+
+  height: 600px;
+  background-color: var(--black-);
+  flex-direction: column;
+  transition: all 0.6s ease;
+}
+
+.doc_post_appt .modal .close_modal {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+.doc_post_appt .modal .close_modal i {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.859);
+  cursor: pointer;
+}
+
+.doc_post_appt.show {
+  transform: translateY(0);
+}
+
+.doc_post_appt .modal_logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.doc_post_appt .modal_logo h1 {
+  color: rgba(255, 255, 255, 0.944);
+  font-size: 30px;
+}
+
+.doc_post_appt .modal_prescribedBy {
+  margin-bottom: 10px;
+}
+
+.doc_post_appt .modal_prescribedBy h1 {
+  color: var(--blue-);
+  margin-bottom: 5px;
+}
+
+.doc_post_appt .modal_prescribedBy p {
+  color: rgba(255, 255, 255, 0.944);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.doc_post_appt #divider {
+  padding: 1px;
+  border: none;
+  background-color: var(--blue-);
+}
+
+.doc_post_appt .modal_patient {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.doc_post_appt .modal_patient .modal_patient_mainText h1 {
+  color: var(--blue-);
+  margin-bottom: 10px;
+}
+
+.doc_post_appt .modal_patient .modal_patient_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.doc_post_appt .modal_patient_container .modal_patient_info {
+  display: flex;
+  align-items: center;
+}
+.doc_post_appt .modal_patient_container .modal_patient_info .modalTitle {
+  color: var(--blue-);
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+.doc_post_appt .modal_patient_container .modal_patient_info .modalData {
+  color: rgba(255, 255, 255, 0.849);
+  margin-top: 3px;
+}
+
+.doc_post_appt form .modal_input {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.doc_post_appt form .modal_input label {
+  color: var(--blue-);
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.doc_post_appt form .modal_input input {
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+}
+
+.doc_post_appt form .modal_input textarea {
+  resize: none;
+  min-height: 110px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.doc_post_appt form .modal_btn button {
+  width: 100%;
+  padding: 6px;
+  font-size: 15px;
+  background-color: var(--blue-);
+  color: rgba(255, 255, 255, 0.863);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.doc_post_appt form .modal_btn button:hover {
+  background-color: var(--blue-hover);
+}

@@ -17,6 +17,11 @@ const DoctorLayout = () => {
       icon: "fa-solid fa-table-columns",
     },
     {
+      label: "Change Password",
+      path: "/doctor/me/change-password",
+      icon: "fa-solid fa-lock",
+    },
+    {
       label: "Account",
       path: "/doctor/me/account",
       icon: "fa-solid fa-user",
@@ -34,14 +39,10 @@ const DoctorLayout = () => {
       return;
     }
 
-    try {
-      if (!user.isConfirmed) {
-        return navigate("/doctor/me/confirmation");
-      }
-    } catch (ex) {
-      console.log(ex);
+    if (!user.isConfirmed) {
+      return navigate("/doctor/me/confirmation");
     }
-  }, [user, navigate]);
+  }, [user]);
 
   return (
     <React.Fragment>

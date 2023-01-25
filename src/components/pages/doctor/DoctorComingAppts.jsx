@@ -3,6 +3,7 @@ import { getAcceptedAppointments } from "../../../services/doctorDataServices";
 import NoData from "../../common/NoData";
 import TableBody from "../../common/TableBody";
 import TableHeader from "../../common/TableHeader";
+import DoctorPostAppt from "../../forms/doctor/DoctorPostAppt";
 
 const DoctorComingAppts = ({ user }) => {
   const columns = [
@@ -15,7 +16,7 @@ const DoctorComingAppts = ({ user }) => {
           <p className=" font_light">Patient</p>
         </React.Fragment>
       ),
-      className: "table-width-230",
+      className: "table-width-210",
     },
     {
       label: "Date",
@@ -29,10 +30,21 @@ const DoctorComingAppts = ({ user }) => {
       className: "table-width-140",
     },
     {
-      label: "Paid Amount",
+      label: "Amount",
       path: "amount",
-      className: "table-width-140",
+      className: "table-width-100",
     },
+    {
+      label: "Action",
+      path: "patient.name",
+      className: "table-width-100",
+      xtraContent: (appt) => (
+        <React.Fragment>
+          <DoctorPostAppt appt={appt} user={user} />
+        </React.Fragment>
+      ),
+    },
+
     {
       label: "Status",
       path: "status",

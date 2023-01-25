@@ -6,6 +6,7 @@ import moment from "moment";
 import { setTime } from "../../../../utils/helper";
 
 import AppointmentDocDisplay from "../../../common/AppointmentDocDisplay";
+import DropDown from "../../../common/DropDown";
 
 const Appointment = (props) => {
   const { currDocId, onRemoveDocId } = props;
@@ -13,7 +14,7 @@ const Appointment = (props) => {
   const formContext = useContext(FormContext);
   const { data } = formContext;
   const { step, submitEvent, onStepChange } = props;
-  console.log(data);
+
   const generateTime = (time) => {
     if (time[0] === "") return "";
     for (let i = 12; i <= 23; i++) {
@@ -42,6 +43,13 @@ const Appointment = (props) => {
 
     return setData;
   };
+
+  const dropDownValues = [
+    { id: 0, name: "-- -- " },
+    { id: 0, name: "On Call" },
+    { id: 0, name: "Face to Face" },
+    { id: 0, name: "Video Call" },
+  ];
 
   const handleRemoveDoc = () => {
     data.doctorId = "";
@@ -79,8 +87,16 @@ const Appointment = (props) => {
             <FormInput label="Date of Appointment" name="date" type="date" />
           </div>
 
-          <div className="choose_sched_input" style={{ marginBottom: "40px" }}>
+          <div className="choose_sched_input" style={{ marginBottom: "" }}>
             <FormInput label="Time of Appointment" name="time" type="time" />
+          </div>
+
+          <div className="choose_sched_input" style={{ marginBottom: "40px" }}>
+            <DropDown
+              name="mode_of_consultation"
+              label="Mode of Consultation"
+              values={dropDownValues}
+            />
           </div>
 
           <div className="buttons">

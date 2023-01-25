@@ -70,7 +70,7 @@ const Contact = () => {
               <textarea className="font_reg"></textarea>
             </div>
 
-            <button>Submit</button>
+            <button className="font_bold">Submit</button>
           </div>
         </div>
       </form>

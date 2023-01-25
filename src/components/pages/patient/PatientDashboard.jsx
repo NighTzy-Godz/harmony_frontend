@@ -5,6 +5,7 @@ import PatientAppointments from "./PatientAppointments";
 import PatientMedicalRecord from "../patient/PatientMedicalRecord";
 import { useEffect } from "react";
 import { getPatientProfile } from "../../../services/patientDataService";
+import PatientPrescription from "./PatientPrescription";
 
 const PatientDashboard = () => {
   const [state, setState] = useState({
@@ -30,6 +31,7 @@ const PatientDashboard = () => {
     const { titleId } = state;
     if (titleId === 1) return <PatientAppointments user={user} />;
     if (titleId === 2) return <PatientMedicalRecord user={user} />;
+    if (titleId === 3) return <PatientPrescription />;
   };
 
   const renderDashboardTitles = () => {

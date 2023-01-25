@@ -2,6 +2,7 @@ export function dashboardCategories() {
   return [
     { id: 1, name: "Pending Appointments" },
     { id: 2, name: "Appointment History" },
+    { id: 3, name: "Prescription Tab" },
   ];
 }
 

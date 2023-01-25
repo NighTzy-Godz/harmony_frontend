@@ -11,6 +11,7 @@ const btnStyle = {
   marginRight: "5px",
   borderRadius: "3px",
   border: "none",
+  cursor: "pointer",
 };
 
 const DecideAppointment = ({ appt }) => {

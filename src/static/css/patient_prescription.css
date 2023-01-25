@@ -1,0 +1,29 @@
+.prescription .prescript_container {
+  display: flex;
+  align-items: center;
+}
+
+.prescription .prescriptionDetails {
+  padding-right: 20px;
+}
+
+.prescription .prescript_container .img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.prescription .prescript_container .img img {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.prescription .prescript_container .details h3 {
+  font-size: 16px;
+  color: var(--black-);
+}
+
+.prescription .prescript_container .details p {
+  color: gray;
+  font-size: 12px;
+}

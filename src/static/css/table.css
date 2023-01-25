@@ -6,7 +6,7 @@
   }
 } */
 
-@media screen and (max-width: 3078.98px) {
+@media screen and (min-width: 100px) {
   /* ======== FOR TABLE =========== */
 
   .profile_right .table_wrapper {
@@ -18,7 +18,7 @@
   }
 
   .profile_right table {
-    width: 100%;
+    min-width: 100%;
     margin: 20px auto 20px auto;
 
     border-collapse: collapse;
@@ -53,30 +53,26 @@
 
   .profile .table-width-230 {
     min-width: 230px;
+    max-width: 300px;
+  }
+
+  .profile .table-width-210 {
+    min-width: 210px;
+  }
+
+  .profile td:first-child {
+    font-size: 12px;
     padding-left: 20px;
   }
 
-  .profile td:first-child p {
-    font-size: 12px;
-  }
-
-  .profile td:last-child p {
-    text-align: center;
-    font-size: 13px;
-    padding: 5px;
-
-    /* margin-left: -20px; */
-    width: 90%;
-    border-radius: 4px;
-  }
   .profile td h2 {
-    font-size: 14px;
+    font-size: 15px;
 
     color: var(--black-);
   }
 
   .profile td p {
-    font-size: 13px;
+    font-size: 14px;
 
     color: var(--black-);
   }
@@ -101,6 +97,15 @@
   .profile .table-width-140 {
     min-width: 140px;
   }
+  .profile .table-width-130 {
+    min-width: 130px;
+  }
+  .profile .table-width-120 {
+    min-width: 120px;
+  }
+  .profile .table-width-110 {
+    min-width: 110px;
+  }
 
   .profile .table-width-100 {
     min-width: 100px;
@@ -119,5 +124,13 @@
   .profile table .confirmed {
     background-color: #0fb76b1f !important;
     color: #26af48 !important;
+  }
+
+  .profile table .patient_status {
+    max-width: 90px;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
   }
 }

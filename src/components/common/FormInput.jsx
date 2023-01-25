@@ -13,7 +13,6 @@ const FormInput = (props) => {
         {label}
       </label>
       <input
-        // autoComplete="true"
         placeholder={placeholder}
         type={type}
         name={name}

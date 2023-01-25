@@ -9,8 +9,9 @@
 
   .all_doctors .all_doctors_left {
     flex: 0.2;
-    border: 1px solid rgba(0, 0, 0, 0.225);
-    height: 520px;
+    /* border: 1px solid rgba(0, 0, 0, 0.225); */
+    /* height: 520px; */
+    /* height: ; */
     margin-right: 30px;
   }
 

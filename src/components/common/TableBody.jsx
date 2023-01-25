@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "../../static/css/table.css";
 import _ from "lodash";
-import LoadingData from "./LoadingData";
+import LoadingSpinner from "./LoadingSpinner";
 
 const TableBody = ({ columns, dataSource }) => {
   const [data, setData] = useState([]);
@@ -16,18 +16,29 @@ const TableBody = ({ columns, dataSource }) => {
 
     getData();
   }, [data, dataSource]);
+
+  const getClasses = (item, column) => {
+    switch (column.path) {
+      case "status":
+        return `font_bold ${_.get(
+          item,
+          column.path
+        ).toLowerCase()} patient_status`;
+
+      case "prescription":
+        return "font_reg prescriptionDetails";
+
+      default:
+        return "font_reg";
+    }
+  };
+
   const renderCell = (item, column) => {
     if (column.xtraContent) return column.xtraContent(item);
 
     return (
       <React.Fragment>
-        <p
-          className={`${
-            column.path === "status"
-              ? `${_.get(item, column.path).toLowerCase()}`
-              : ""
-          } font_reg `}
-        >
+        <p className={`${getClasses(item, column)}`}>
           {column.path === "amount" ? "P" : ""} {_.get(item, column.path)}
         </p>
       </React.Fragment>
@@ -50,10 +61,22 @@ const TableBody = ({ columns, dataSource }) => {
     });
   };
 
+  const renderLoadingTable = () => {
+    return columns.map((item) => {
+      return (
+        <td key={item.path}>
+          <LoadingSpinner />
+        </td>
+      );
+    });
+  };
+
   return (
     <React.Fragment>
       {data.length === 0 ? (
-        <LoadingData msg="Loading data for table body..." />
+        <React.Fragment>
+          <tbody>{renderLoadingTable()}</tbody>
+        </React.Fragment>
       ) : (
         <React.Fragment>
           <tbody>{renderTableBody()}</tbody>

@@ -143,3 +143,157 @@
     color: white;
   }
 }
+
+@media screen and (max-width: 575.98px) {
+  .contact_page {
+    padding-top: 80px;
+
+    background: linear-gradient(
+      360deg,
+      rgba(0, 113, 220, 0.06) 40.94%,
+      rgba(229, 241, 251, 0) 100%
+    );
+  }
+
+  .contact_page .mainText {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .contact_page .mainText .title {
+    color: var(--black-);
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .contact_page .mainText .para {
+    color: var(--black-);
+    font-size: 12.5px;
+    margin: 0 auto;
+  }
+
+  .contact_page .contact_box_container {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* width: 80%;
+    margin: 0 auto; */
+  }
+
+  /* ===== GET IN TOUCH SECTION ===== */
+  .get_in_touch {
+    padding: 30px 0px;
+  }
+
+  .get_in_touch .touch_container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .get_in_touch .main_text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .get_in_touch .main_text h1 {
+    color: var(--black-);
+    font-size: 25px;
+  }
+
+  .get_in_touch .touch_form {
+    box-shadow: 0 4px 5px 5px #e5f1fb;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .get_in_touch .touch_form .touch_form_container {
+    display: flex;
+    /* margin-right: 10px; */
+    /* justify-content: space-between; */
+  }
+
+  .get_in_touch .touch_form .touch_form_input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .get_in_touch .touch_form .touch_form_input:first-child {
+    margin-right: 20px;
+  }
+
+  .get_in_touch .touch_form .touch_form_input label {
+    font-size: 12.5px;
+    color: var(--black-);
+    margin-bottom: 5px;
+  }
+
+  .get_in_touch .touch_form .touch_form_input input {
+    background: #ffffff;
+    border: 1px solid #e5f1fb;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 12.5px;
+  }
+
+  .get_in_touch .touch_form .touch_form_input textarea {
+    background: #ffffff;
+    border: 1px solid #e5f1fb;
+    min-height: 130px;
+    border-radius: 8px;
+    padding: 15px;
+    outline: none;
+    font-size: 12.5px;
+    resize: none;
+  }
+
+  .get_in_touch button {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 20px;
+    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e5f1fb;
+    background-color: var(--blue-);
+    cursor: pointer;
+  }
+
+  .contact_modal {
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.819);
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+  }
+
+  .contact_modal.show {
+    transform: translateY(0);
+  }
+
+  .contact_modal h2 {
+    color: rgba(255, 255, 255, 0.918);
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .contact_modal .close_modal {
+    position: absolute;
+    top: 4rem;
+    cursor: pointer;
+    right: 2rem;
+    color: white;
+    font-size: 15px;
+  }
+}
